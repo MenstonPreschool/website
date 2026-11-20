@@ -21,3 +21,4 @@ li.nav-item.open > ul[data-ux="Dropdown"] { display: block; }
 .term-dates ul { padding-left: 1.2rem; margin: 0 0 24px; }
 @media (max-width: 767px) { .contact-grid { grid-template-columns: 1fr; } }
 .contact-details a:not(.contact-button) { text-decoration: underline; }
+.x-rt a[href*="facebook.com"] { text-decoration: underline; }
