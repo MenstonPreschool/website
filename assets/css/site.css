@@ -1,0 +1,150 @@
+/* Menston Preschool. One stylesheet for the whole site. */
+
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: 300 800; font-display: swap; src: url("../fonts/open-sans.woff2") format("woff2"); }
+@font-face { font-family: "Open Sans"; font-style: italic; font-weight: 300 800; font-display: swap; src: url("../fonts/open-sans-italic.woff2") format("woff2"); }
+@font-face { font-family: "Playfair Display"; font-style: normal; font-weight: 400 900; font-display: swap; src: url("../fonts/playfair-display.woff2") format("woff2"); }
+
+:root {
+  --ink: #1b1b1b;
+  --text: #4f4f4f;
+  --accent: #826c6c;
+  --panel: #f3f3f3;
+  --button: #dadada;
+  --button-hover: #c6c6c6;
+  --line: #e2e2e2;
+  --max: 1112px;
+  --prose: 1000px;
+  --serif: "Playfair Display", Georgia, serif;
+  --sans: "Open Sans", Arial, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; font: 400 1rem/1.75 var(--sans); color: var(--text); background: #fff; }
+img { max-width: 100%; height: auto; }
+a { color: var(--accent); text-underline-offset: 2px; }
+a:hover { color: var(--ink); }
+:focus-visible { outline: 3px solid #4a90d9; outline-offset: 2px; }
+
+h1, h2, h3 { font-family: var(--serif); font-weight: 400; color: var(--ink); line-height: 1.25; }
+h1 { font-size: clamp(1.9rem, 4vw, 2.6rem); margin: 0 0 .8em; }
+h2 { font-size: 1.6rem; margin: 1.8em 0 .5em; }
+p, ul, ol { margin: 0 0 1.2em; }
+
+.container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.skip-link { position: absolute; left: -999px; top: 0; background: #fff; padding: 8px 16px; z-index: 100; }
+.skip-link:focus { left: 0; }
+
+/* ---------- Header and menu ---------- */
+.site-header { text-align: center; padding: 32px 0 0; }
+.logo { display: inline-block; }
+.logo img { display: block; height: 200px; width: auto; }
+
+.site-nav { margin-top: 24px; }
+.site-nav ul { list-style: none; margin: 0; padding: 0; }
+.site-nav > ul { display: flex; justify-content: center; flex-wrap: wrap; gap: 4px 36px; }
+.site-nav li { position: relative; }
+.site-nav a, .sub-toggle {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 10px 2px; border: 0; background: none; cursor: pointer;
+  font: 400 .875rem/1.2 var(--sans); letter-spacing: .16em; text-transform: uppercase;
+  color: var(--ink); text-decoration: none;
+}
+.site-nav a:hover, .sub-toggle:hover { color: var(--accent); }
+.site-nav li.current > a, .site-nav li.current > .sub-toggle { box-shadow: inset 0 -1px 0 var(--ink); }
+.chevron { transition: transform .15s; }
+.sub-toggle[aria-expanded="true"] .chevron { transform: rotate(180deg); }
+
+.sub {
+  display: none; position: absolute; left: 0; top: 100%; z-index: 20; min-width: 270px; text-align: left;
+  background: #fff; padding: 12px 0; box-shadow: 0 4px 16px rgba(0, 0, 0, .18);
+}
+.has-sub:hover > .sub, .has-sub:focus-within > .sub, .has-sub.open > .sub { display: block; }
+.sub a { display: block; padding: 7px 24px; letter-spacing: .04em; text-transform: none; font-size: .9rem; color: var(--text); }
+.sub a[aria-current] { color: var(--ink); font-weight: 600; }
+.sub a:hover { background: var(--panel); }
+
+.nav-toggle { display: none; }
+
+/* ---------- Page content ---------- */
+.page { max-width: calc(var(--prose) + 48px); padding-top: 56px; padding-bottom: 80px; display: flow-root; }
+.page li { margin-bottom: .3em; }
+.page img { border-radius: 2px; }
+
+figure.side { float: right; width: min(340px, 40%); margin: .4rem 0 1.5rem 2.5rem; }
+figure.side img { display: block; width: 100%; }
+figure.side figcaption { margin-top: .5rem; font-size: .875rem; font-style: italic; }
+
+.button, button.button {
+  display: inline-block; padding: .85em 1.7em; border: 0; cursor: pointer;
+  background: var(--button); color: var(--ink); text-decoration: none;
+  font: 700 .8rem/1.3 var(--sans); letter-spacing: .14em; text-transform: uppercase;
+}
+.button:hover { background: var(--button-hover); color: var(--ink); }
+
+.download { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  max-width: 560px; padding: 14px 20px; margin: 0 0 12px; background: var(--panel); }
+.download span { font-weight: 600; color: var(--ink); }
+.download .button { padding: .6em 1.2em; }
+
+/* ---------- Home page ---------- */
+.hero { max-width: calc(var(--max) - 48px); padding: 0; display: grid; grid-template-columns: 3fr 2fr; margin-top: 32px; background: var(--panel); }
+.hero img { display: block; width: 100%; height: 100%; max-height: 520px; object-fit: cover; }
+.hero-panel { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 40px 24px; }
+.hero-panel .eyebrow { margin: 0; text-transform: uppercase; letter-spacing: .16em; font-size: .9rem; color: var(--accent); }
+.hero-panel h1 { font-size: clamp(2rem, 4vw, 3rem); margin: .2em 0 .8em; }
+
+.intro { max-width: 720px; margin: 64px auto 0; text-align: center; font-size: 1.15rem; }
+.intro h2 { margin-top: 0; font-size: 1.5rem; }
+.badges { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 32px 56px; margin: 56px auto 80px; padding: 0; list-style: none; }
+.badges img { display: block; height: 150px; width: auto; }
+
+/* ---------- Contact and term dates ---------- */
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 8px 0 48px; }
+.contact-grid h2 { margin-top: 0; }
+.contact-grid address { font-style: normal; margin-bottom: 1.2em; }
+.contact-map iframe { width: 100%; height: 100%; min-height: 340px; border: 0; background: var(--panel); }
+.contact-form { max-width: 640px; }
+.contact-form label { display: block; margin: 0 0 1em; font-weight: 600; color: var(--ink); }
+.contact-form input, .contact-form textarea { display: block; width: 100%; margin-top: 4px; padding: 11px 12px; font: inherit; font-weight: 400; color: var(--ink); border: 1px solid #aaa; border-radius: 2px; }
+.term-list { margin-bottom: 1.6em; }
+
+/* ---------- Footer ---------- */
+.site-footer { margin-top: 24px; padding: 40px 0 48px; text-align: center; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; color: #6b6b6b; border-top: 1px solid var(--line); }
+.site-footer p { margin: 0 0 .5em; }
+.site-footer .social { display: flex; justify-content: center; gap: 16px; list-style: none; margin: 0 0 20px; padding: 0; }
+.site-footer .social a { color: #1877f2; display: block; }
+.site-footer .social a[aria-label="Instagram"] { color: #c13584; }
+.site-footer a { color: inherit; }
+.site-footer a:hover { color: var(--ink); }
+
+/* ---------- Small screens ---------- */
+@media (max-width: 800px) {
+  .site-header { padding-top: 16px; }
+  .logo img { height: 110px; }
+  .nav-toggle { display: block; position: absolute; top: 20px; right: 16px; width: 48px; height: 48px; background: none; border: 0; cursor: pointer; }
+  .site-header .container { position: relative; }
+  .bars, .bars::before, .bars::after { display: block; width: 26px; height: 2px; background: var(--ink); content: ""; position: relative; margin: 0 auto; }
+  .bars::before { top: -8px; position: absolute; left: 0; }
+  .bars::after { top: 8px; position: absolute; left: 0; }
+  .site-nav { display: none; margin: 8px -24px 0; padding: 8px 24px 16px; background: var(--panel); text-align: left; }
+  .site-nav.open { display: block; }
+  .site-nav > ul { display: block; }
+  .site-nav a, .sub-toggle { display: flex; width: 100%; justify-content: space-between; padding: 12px 0; }
+  .sub { position: static; box-shadow: none; background: none; padding: 0 0 8px 16px; min-width: 0; }
+  .has-sub:hover > .sub, .has-sub:focus-within > .sub { display: none; }
+  .has-sub.open > .sub { display: block; }
+  .sub a { padding: 8px 0; }
+  .site-nav li.current > a, .site-nav li.current > .sub-toggle { box-shadow: none; font-weight: 700; }
+
+  .page { padding-top: 32px; padding-bottom: 56px; }
+  figure.side { float: none; width: 100%; max-width: 420px; margin: 0 0 1.5rem; }
+  .hero { grid-template-columns: 1fr; }
+  .hero img { max-height: 340px; }
+  .intro { margin-top: 40px; font-size: 1.05rem; }
+  .badges img { height: 110px; }
+  .contact-grid { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }

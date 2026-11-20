@@ -1,0 +1,8 @@
+{%- comment -%}
+  A download row. Usage:
+  {% include download.html title="Admissions Policy (PDF)" url="assets/files/Admissions-Policy.pdf" %}
+{%- endcomment -%}
+<div class="download">
+  <span>{{ include.title }}</span>
+  <a class="button" href="{{ include.url }}">Download</a>
+</div>

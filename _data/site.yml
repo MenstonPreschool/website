@@ -1,0 +1,21 @@
+# Details used in the footer and on the contact page.
+charity_number: "1164354"
+charity_url: https://register-of-charities.charitycommission.gov.uk/charity-search/-/charity-details/5069967
+copyright_from: 2023
+phone: "01943 876252"
+phone_link: "+441943876252"
+email: office@menstonpreschool.org
+address:
+  - Kirklands Community Centre
+  - Main Street
+  - Menston
+  - LS29 6HT
+# Social links shown in the footer. Supported icons: facebook, instagram.
+# To add Instagram, remove the # from the two lines below and put in the address.
+social:
+  - name: Facebook
+    icon: facebook
+    url: https://www.facebook.com/menstonpreschool/
+#  - name: Instagram
+#    icon: instagram
+#    url: https://www.instagram.com/YOUR-ACCOUNT/

@@ -1,0 +1,8 @@
+{%- comment -%}
+  Picture floated beside the text. Usage:
+  {% include figure.html src="assets/images/about-us.jpg" alt="Description of the picture" caption="Optional caption" %}
+{%- endcomment -%}
+<figure class="side">
+  <img src="{{ include.src }}" alt="{{ include.alt | escape }}" loading="lazy">
+  {% if include.caption %}<figcaption>{{ include.caption }}</figcaption>{% endif %}
+</figure>

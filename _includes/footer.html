@@ -1,0 +1,14 @@
+<footer class="site-footer">
+  <div class="container">
+    {% if site.data.site.social.size > 0 %}
+    <ul class="social">
+      {% for s in site.data.site.social %}
+      <li><a href="{{ s.url }}" target="_blank" rel="noopener" aria-label="{{ s.name }}">{% include icon.html name=s.icon %}</a></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    <p>Copyright &copy; {{ site.title }} {{ site.data.site.copyright_from }}&ndash;<span data-year>{{ site.time | date: "%Y" }}</span>. All rights reserved.</p>
+    <p>Registered charity number: <a href="{{ site.data.site.charity_url }}" target="_blank" rel="noopener">{{ site.data.site.charity_number }}</a></p>
+    <p><a href="privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>

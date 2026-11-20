@@ -1,0 +1,29 @@
+# The main menu. An item with "children" becomes a dropdown.
+- title: Home
+  url: index.html
+- title: About Us
+  children:
+    - title: About Us
+      url: about-us.html
+    - title: Admissions and Attendance
+      url: admissions-and-attendance.html
+    - title: Policies and Procedures
+      url: policies-and-procedures.html
+    - title: Learning at Preschool
+      url: learning-at-preschool.html
+    - title: Funding & Fees
+      url: funding-and-fees.html
+    - title: Term Dates
+      url: term-dates.html
+    - title: Preschool Clothing
+      url: preschool-clothing.html
+    - title: Safeguarding
+      url: safeguarding.html
+    - title: SENCO
+      url: senco.html
+- title: Committee
+  url: committee.html
+- title: News & Events
+  url: events.html
+- title: Contact
+  url: contact.html

@@ -1,0 +1,38 @@
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="index.html">
+      <img src="assets/images/logo.jpg" alt="Menston Preschool - learning through play" width="173" height="200">
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="sr-only">Menu</span><span class="bars" aria-hidden="true"></span>
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      <ul>
+        {% for item in site.data.navigation %}
+          {% assign here = false %}
+          {% if item.url %}
+            {% assign path = '/' | append: item.url %}
+            {% if page.url == path or item.url == 'index.html' and page.url == '/' %}{% assign here = true %}{% endif %}
+          {% endif %}
+          {% if item.children %}
+            {% for child in item.children %}
+              {% assign cpath = '/' | append: child.url %}
+              {% if page.url == cpath %}{% assign here = true %}{% endif %}
+            {% endfor %}
+            <li class="has-sub{% if here %} current{% endif %}">
+              <button class="sub-toggle" type="button" aria-expanded="false">{{ item.title | escape }}{% include icon.html name="chevron" %}</button>
+              <ul class="sub">
+                {% for child in item.children %}
+                  {% assign cpath = '/' | append: child.url %}
+                  <li><a href="{{ child.url }}"{% if page.url == cpath %} aria-current="page"{% endif %}>{{ child.title | escape }}</a></li>
+                {% endfor %}
+              </ul>
+            </li>
+          {% else %}
+            <li{% if here %} class="current"{% endif %}><a href="{{ item.url }}"{% if here %} aria-current="page"{% endif %}>{{ item.title | escape }}</a></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>

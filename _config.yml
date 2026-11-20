@@ -1,0 +1,13 @@
+# Menston Preschool website. Built by GitHub Pages (Jekyll). See README.md for how to edit.
+title: Menston Preschool
+description: Menston Preschool is a charity-run, Ofsted Outstanding preschool in the heart of Menston, West Yorkshire.
+lang: en-GB
+markdown: kramdown
+# Leave empty on a custom domain or when served from the site root.
+baseurl: ""
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - tools
