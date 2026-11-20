@@ -62,7 +62,7 @@ Children outside the Menston area will only be accepted if there is sufficient s
 - We consult with families about the opening times of the Preschool to avoid excluding anyone.
 - We endeavour to be flexible about attendance patterns to accommodate the needs of individual children and families.
 
-This policy is reviewed annually. Last reviewed: August 2025.
+This policy is reviewed annually. Last reviewed: August 2026.
 
 ## Attendance
 
