@@ -1,0 +1,6 @@
+/* Replaces behaviour GoDaddy's script used to provide */
+li.nav-item:has([data-aid="NAV_MORE"]) { display: none; }
+li.nav-item { position: relative; }
+li.nav-item:hover > ul[data-ux="Dropdown"],
+li.nav-item.open > ul[data-ux="Dropdown"] { display: block; }
+[data-ux="NavigationDrawer"].open { transform: none !important; }
