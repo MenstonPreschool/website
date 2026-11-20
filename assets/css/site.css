@@ -72,6 +72,14 @@ p, ul, ol { margin: 0 0 1.2em; }
 .page li { margin-bottom: .3em; }
 .page img { border-radius: 2px; }
 
+h3 { font-size: 1.2rem; margin: 1.6em 0 .4em; font-family: var(--serif); font-weight: 400; color: var(--ink); }
+.page table { width: 100%; max-width: 760px; border-collapse: collapse; margin: 0 0 1.5em; font-size: .95rem; }
+.page th, .page td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.page td:last-child:not(:first-child) { white-space: nowrap; }
+.page thead th { background: var(--panel); color: var(--ink); }
+.page tr:has(td[colspan]) td, .page td strong:only-child { color: var(--ink); }
+.page ol, .page ul { padding-left: 1.4rem; }
+
 figure.side { float: right; width: min(340px, 40%); margin: .4rem 0 1.5rem 2.5rem; }
 figure.side img { display: block; width: 100%; }
 figure.side figcaption { margin-top: .5rem; font-size: .875rem; font-style: italic; }

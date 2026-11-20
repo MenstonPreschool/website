@@ -6,7 +6,6 @@ description: Menston Preschool term dates, half terms and closure days for 2026 
 Our term dates are the same as Menston Primary School.
 
 [Add to your calendar (.ics)](assets/files/menston-preschool-term-dates-2026-27.ics){: .button}
-[Download as PDF](assets/files/Term-Dates-2026-27.pdf){: .button}
 
 ## Autumn term 2026
 
