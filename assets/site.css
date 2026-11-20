@@ -4,3 +4,20 @@ li.nav-item { position: relative; }
 li.nav-item:hover > ul[data-ux="Dropdown"],
 li.nav-item.open > ul[data-ux="Dropdown"] { display: block; }
 [data-ux="NavigationDrawer"].open { transform: none !important; }
+
+/* Contact and term dates pages (hand-written, replaces GoDaddy blocks) */
+.contact-grid, .contact-form, .term-dates { font-family: 'Open Sans', sans-serif; color: #1b1b1b; line-height: 1.6; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin: 24px 0 40px; }
+.contact-grid h2, .contact-form h2, .term-dates h2 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: 1.5rem; margin: 0 0 12px; }
+.contact-grid address { font-style: normal; margin-bottom: 12px; }
+.contact-grid a, .term-dates a { color: #5b4a4a; }
+.contact-map iframe { width: 100%; height: 100%; min-height: 320px; border: 0; }
+.contact-button { display: inline-block; padding: 12px 24px; background: #d8d8d8; color: #1b1b1b !important; text-decoration: none; letter-spacing: .1em; text-transform: uppercase; font-weight: 700; font-size: .85rem; margin-right: 16px; }
+.contact-form { max-width: 640px; margin: 0 0 48px; }
+.contact-form label { display: block; margin: 12px 0; font-weight: 600; }
+.contact-form input, .contact-form textarea { display: block; width: 100%; box-sizing: border-box; padding: 10px; margin-top: 4px; font: inherit; border: 1px solid #aaa; }
+.contact-form button { padding: 12px 32px; border: 0; background: #d8d8d8; font: inherit; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; cursor: pointer; }
+.plain-section { max-width: 1112px; margin: 0 auto; padding: 24px 16px; box-sizing: border-box; }
+.term-dates ul { padding-left: 1.2rem; margin: 0 0 24px; }
+@media (max-width: 767px) { .contact-grid { grid-template-columns: 1fr; } }
+.contact-details a:not(.contact-button) { text-decoration: underline; }

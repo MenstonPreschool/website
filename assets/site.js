@@ -13,22 +13,33 @@
     }
     if (a && a.getAttribute('href') === '#') {
       e.preventDefault();
+      if (drawer && drawer.contains(a)) {
+        var sub = a.parentElement.querySelector('ul');
+        if (sub) {
+          var open = sub.style.display === 'block';
+          sub.style.display = open ? '' : 'block';
+          a.setAttribute('aria-expanded', String(!open));
+        }
+        return;
+      }
       var li = a.closest('li.nav-item');
       if (li) li.classList.toggle('open');
     }
   });
 
-  // Contact form: GoDaddy's backend is gone, so hand over to the visitor's mail client.
+  // Footer copyright: keep the end year current
+  document.querySelectorAll('[data-copyright-from]').forEach(function (el) {
+    var from = +el.getAttribute('data-copyright-from'), now = new Date().getFullYear();
+    el.textContent = now > from ? from + '\u2013' + now : String(from);
+  });
+
+  // Contact form: no server behind this site, so hand over to the visitor's mail client.
   document.addEventListener('submit', function (e) {
     var f = e.target;
-    if (!f.querySelector('[data-aid="CONTACT_FORM_MESSAGE"]')) return;
+    if (f.id !== 'contact-form') return;
     e.preventDefault();
-    var v = function (id) {
-      var el = f.querySelector('[data-aid="' + id + '"]');
-      var i = el && (el.matches('input,textarea') ? el : el.querySelector('input,textarea'));
-      return i ? i.value : '';
-    };
-    var body = v('CONTACT_FORM_MESSAGE') + '\n\nFrom: ' + v('CONTACT_FORM_NAME') + ' <' + v('CONTACT_FORM_EMAIL') + '>';
+    var d = new FormData(f);
+    var body = d.get('message') + '\n\nFrom: ' + d.get('name') + ' <' + d.get('email') + '>';
     location.href = 'mailto:office@menstonpreschool.org?subject=' + encodeURIComponent('Website enquiry') + '&body=' + encodeURIComponent(body);
   });
 })();

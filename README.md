@@ -5,7 +5,9 @@ Static copy of menstonpreschool.org, taken from the GoDaddy Website Builder site
 - Plain HTML, CSS and files in `assets/`. No build step.
 - GoDaddy's JavaScript runtime has been removed. `assets/site.js` and `assets/site.css` replace the nav dropdowns, mobile menu and gallery behaviour.
 - The contact form opens the visitor's email client addressed to office@menstonpreschool.org. Replace it with a form service if a real form is wanted.
-- The unlinked `test` and `funding-&-fees-backup` pages were not copied.
+- The footer copyright end year updates itself in the browser (`assets/site.js`).
+- Term dates: edit the list in `term-dates.html`, `assets/menston-preschool-term-dates-2026-27.ics` and the PDF each year.
+- `about-us-1.html`, `admissions-and-attendance-1.html`, `senco-1.html` and `funding-&-fees.html` are redirect stubs for the old GoDaddy URLs.
 
 ## Publishing
 
