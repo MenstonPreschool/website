@@ -11,12 +11,15 @@ description: Contact Menston Preschool by telephone, email or in person at Kirkl
     <address>{% for line in s.address %}{{ line }}{% unless forloop.last %}<br>{% endunless %}{% endfor %}</address>
     <p><strong>Telephone:</strong> <a href="tel:{{ s.phone_link }}">{{ s.phone }}</a></p>
     <p><strong>Email:</strong> <a href="mailto:{{ s.email }}">{{ s.email }}</a></p>
-    <p><strong>Opening hours:</strong><br>Monday to Friday, 8:15am to 3pm, term time only.</p>
-    <p><a class="button" href="https://www.google.com/maps/dir/?api=1&amp;destination=Kirklands+Community+Centre%2C+Main+Street%2C+Menston%2C+LS29+6HT" target="_blank" rel="noopener">Get directions</a></p>
+    <p><strong>Opening hours:</strong><br>{{ s.hours }}.</p>
+    <p><a class="button" href="{{ s.directions_link }}" target="_blank" rel="noopener">Get directions</a></p>
   </div>
   <div class="contact-map">
-    <iframe title="Map showing Menston Preschool at Kirklands Community Centre, Main Street, Menston" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-      src="https://maps.google.com/maps?q=Kirklands+Community+Centre%2C+Main+Street%2C+Menston%2C+LS29+6HT&amp;hl=en-GB&amp;z=16&amp;output=embed"></iframe>
+    <a href="{{ s.map_link }}" target="_blank" rel="noopener">
+      <img src="assets/images/map.png" width="800" height="520" loading="lazy"
+        alt="Map showing Menston Preschool at Kirklands Community Centre on Main Street, Menston. Select to open the interactive map.">
+    </a>
+    <p><a href="{{ s.map_link }}" target="_blank" rel="noopener">Open the interactive map</a><br>Map data &copy; OpenStreetMap contributors</p>
   </div>
 </div>
 

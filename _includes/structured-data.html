@@ -1,0 +1,30 @@
+{%- assign s = site.data.site -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Preschool",
+  "name": {{ site.title | jsonify }},
+  "url": {{ site.url | jsonify }},
+  "description": {{ site.description | jsonify }},
+  "logo": {{ site.url | append: "/assets/images/logo.jpg" | jsonify }},
+  "image": {{ site.url | append: "/assets/images/home-hero.jpg" | jsonify }},
+  "telephone": {{ s.phone_link | jsonify }},
+  "email": {{ s.email | jsonify }},
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Kirklands Community Centre, Main Street",
+    "addressLocality": "Menston",
+    "addressRegion": "West Yorkshire",
+    "postalCode": "LS29 6HT",
+    "addressCountry": "GB"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": {{ s.latitude }}, "longitude": {{ s.longitude }} },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "opens": "08:15",
+    "closes": "15:00"
+  }],
+  "sameAs": [{% for item in s.social %}{{ item.url | jsonify }}{% unless forloop.last %}, {% endunless %}{% endfor %}]
+}
+</script>

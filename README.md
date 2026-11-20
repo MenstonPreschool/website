@@ -18,8 +18,8 @@ Pages are written in Markdown: `## Heading`, `- bullet`, `**bold**`, `[link text
 
 | To change | Edit |
 | --- | --- |
-| Menu | `_data/navigation.yml` |
-| Phone, email, address, charity number, social links (Instagram is ready to switch on) | `_data/site.yml` |
+| Menu (the parents' area link is ready to switch on) | `_data/navigation.yml` |
+| Phone, email, address, opening hours, charity number, social links (Instagram is ready to switch on) | `_data/site.yml` |
 | Colours, fonts, spacing | the variables at the top of `assets/css/site.css` |
 | Footer text | `_includes/footer.html` |
 
@@ -41,6 +41,8 @@ The footer copyright year updates itself.
 - The contact form opens the visitor's email app. It can be replaced with a Microsoft Forms embed.
 - `about-us-1.html`, `admissions-and-attendance-1.html`, `senco-1.html` and `funding-&-fees.html` are redirects from the old GoDaddy addresses.
 - On a custom domain, add a `CNAME` file containing the domain name, then update DNS at GoDaddy.
+- The pages removed from the old site (Our Team, Gallery and so on) redirect to the nearest page. The sitemap and `robots.txt` are generated automatically.
+- The contact page map is a saved picture from OpenStreetMap (`assets/images/map.png`), so no Google cookies are loaded.
 
 ## Previewing locally (optional)
 

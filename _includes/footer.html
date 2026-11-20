@@ -1,14 +1,33 @@
+{% assign s = site.data.site %}
 <footer class="site-footer">
   <div class="container">
-    {% if site.data.site.social.size > 0 %}
-    <ul class="social">
-      {% for s in site.data.site.social %}
-      <li><a href="{{ s.url }}" target="_blank" rel="noopener" aria-label="{{ s.name }}">{% include icon.html name=s.icon %}</a></li>
-      {% endfor %}
-    </ul>
-    {% endif %}
-    <p>Copyright &copy; {{ site.title }} <span data-year>{{ site.time | date: "%Y" }}</span>. All rights reserved.</p>
-    <p>Registered charity number: <a href="{{ site.data.site.charity_url }}" target="_blank" rel="noopener">{{ site.data.site.charity_number }}</a></p>
-    <p><a href="privacy-policy.html">Privacy Policy</a></p>
+    <div class="footer-grid">
+      <div>
+        <h2>Find us</h2>
+        <address>{% for line in s.address %}{{ line }}{% unless forloop.last %}<br>{% endunless %}{% endfor %}</address>
+        <p><a href="{{ s.directions_link }}" target="_blank" rel="noopener">Get directions</a></p>
+      </div>
+      <div>
+        <h2>Get in touch</h2>
+        <p>Telephone: <a href="tel:{{ s.phone_link }}">{{ s.phone }}</a><br>
+        Email: <a href="mailto:{{ s.email }}">{{ s.email }}</a></p>
+        {% if s.social.size > 0 %}
+        <ul class="social">
+          {% for item in s.social %}
+          <li><a href="{{ item.url }}" target="_blank" rel="noopener" aria-label="{{ item.name }}">{% include icon.html name=item.icon %}</a></li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </div>
+      <div>
+        <h2>Opening hours</h2>
+        <p>{{ s.hours }}.</p>
+        <p><a href="term-dates.html">Term dates</a></p>
+      </div>
+    </div>
+    <div class="footer-base">
+      <p>Copyright &copy; {{ site.title }} <span data-year>{{ site.time | date: "%Y" }}</span>. All rights reserved.</p>
+      <p>Registered charity number: <a href="{{ s.charity_url }}" target="_blank" rel="noopener">{{ s.charity_number }}</a> &middot; <a href="privacy-policy.html">Privacy Policy</a></p>
+    </div>
   </div>
 </footer>

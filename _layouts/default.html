@@ -6,6 +6,11 @@
   <title>{% if page.url != '/' %}{{ page.title | escape }} | {% endif %}{{ site.title }}</title>
   <meta name="description" content="{{ page.description | default: site.description | escape }}">
   <meta name="theme-color" content="#e8e8e8">
+  <link rel="canonical" href="{{ site.url }}{{ page.url | replace: 'index.html', '' }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ site.url }}{{ page.url | replace: 'index.html', '' }}">
+  <meta property="og:image" content="{{ site.url }}/assets/images/home-hero.jpg">
+  <meta name="twitter:card" content="summary_large_image">
   <meta property="og:site_name" content="{{ site.title }}">
   <meta property="og:title" content="{{ page.title | default: site.title | escape }}">
   <meta property="og:description" content="{{ page.description | default: site.description | escape }}">
@@ -13,6 +18,7 @@
   <link rel="apple-touch-icon" href="assets/images/logo.jpg">
   <link rel="preload" href="assets/fonts/open-sans.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/site.css">
+  {% if page.url == '/' %}{% include structured-data.html %}{% endif %}
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>

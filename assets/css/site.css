@@ -7,7 +7,7 @@
 :root {
   --ink: #1b1b1b;
   --text: #4f4f4f;
-  --accent: #826c6c;
+  --accent: #6f5a5a;
   --panel: #f3f3f3;
   --button: #dadada;
   --button-hover: #c6c6c6;
@@ -112,20 +112,29 @@ figure.side figcaption { margin-top: .5rem; font-size: .875rem; font-style: ital
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 8px 0 48px; }
 .contact-grid h2 { margin-top: 0; }
 .contact-grid address { font-style: normal; margin-bottom: 1.2em; }
-.contact-map iframe { width: 100%; height: 100%; min-height: 340px; border: 0; background: var(--panel); }
 .contact-form { max-width: 640px; }
 .contact-form label { display: block; margin: 0 0 1em; font-weight: 600; color: var(--ink); }
 .contact-form input, .contact-form textarea { display: block; width: 100%; margin-top: 4px; padding: 11px 12px; font: inherit; font-weight: 400; color: var(--ink); border: 1px solid #aaa; border-radius: 2px; }
 .term-list { margin-bottom: 1.6em; }
 
 /* ---------- Footer ---------- */
-.site-footer { margin-top: 24px; padding: 40px 0 48px; text-align: center; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; color: #6b6b6b; border-top: 1px solid var(--line); }
-.site-footer p { margin: 0 0 .5em; }
-.site-footer .social { display: flex; justify-content: center; gap: 16px; list-style: none; margin: 0 0 20px; padding: 0; }
+.site-footer { margin-top: 24px; padding: 48px 0 40px; background: var(--panel); font-size: .9rem; color: var(--text); }
+.footer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; text-align: left; }
+.site-footer h2 { margin: 0 0 .6em; font: 700 .8rem/1.4 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--ink); }
+.site-footer address { font-style: normal; margin-bottom: .8em; }
+.site-footer p { margin: 0 0 .8em; }
+.site-footer .social { display: flex; gap: 14px; list-style: none; margin: 0; padding: 0; }
 .site-footer .social a { color: #1877f2; display: block; }
 .site-footer .social a[aria-label="Instagram"] { color: #c13584; }
-.site-footer a { color: inherit; }
+.footer-base { margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--line); text-align: center; font-size: .8rem; color: #5f5f5f; }
+.footer-base p { margin: 0 0 .3em; }
+.site-footer a { color: var(--accent); }
 .site-footer a:hover { color: var(--ink); }
+
+/* ---------- Map ---------- */
+.contact-map a { display: block; }
+.contact-map img { display: block; width: 100%; height: auto; border: 1px solid var(--line); }
+.contact-map p { margin: .5em 0 0; font-size: .9rem; }
 
 /* ---------- Small screens ---------- */
 @media (max-width: 800px) {
@@ -153,6 +162,7 @@ figure.side figcaption { margin-top: .5rem; font-size: .875rem; font-style: ital
   .intro { margin-top: 40px; font-size: 1.05rem; }
   .badges img { height: 110px; }
   .contact-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 20px; }
 }
 
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }

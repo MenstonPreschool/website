@@ -24,7 +24,7 @@
               <ul class="sub">
                 {% for child in item.children %}
                   {% assign cpath = '/' | append: child.url %}
-                  <li><a href="{{ child.url }}"{% if page.url == cpath %} aria-current="page"{% endif %}>{{ child.title | escape }}</a></li>
+                  <li><a href="{{ child.url }}"{% if page.url == cpath %} aria-current="page"{% endif %}{% if child.external %} target="_blank" rel="noopener"{% endif %}>{{ child.title | escape }}</a></li>
                 {% endfor %}
               </ul>
             </li>

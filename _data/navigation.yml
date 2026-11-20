@@ -1,4 +1,5 @@
 # The main menu. An item with "children" becomes a dropdown.
+# Add "external: true" to a link that leads to another website (it opens in a new tab).
 - title: Home
   url: index.html
 - title: About Us
@@ -9,6 +10,8 @@
       url: admissions-and-attendance.html
     - title: Policies and Procedures
       url: policies-and-procedures.html
+- title: Parents & Carers
+  children:
     - title: Learning at Preschool
       url: learning-at-preschool.html
     - title: Funding & Fees
@@ -21,6 +24,11 @@
       url: safeguarding.html
     - title: SENCO
       url: senco.html
+    # When the private parents' area is ready, remove the # from the next three lines
+    # and put in its address.
+    # - title: Parents' area (log in)
+    #   url: https://example.com
+    #   external: true
 - title: Committee
   url: committee.html
 - title: News & Events

@@ -5,6 +5,10 @@ lang: en-GB
 markdown: kramdown
 # Leave empty on a custom domain or when served from the site root.
 baseurl: ""
+# The address the site will have once the domain is switched over (used for the sitemap and canonical links).
+url: "https://menstonpreschool.org"
+plugins:
+  - jekyll-sitemap
 exclude:
   - README.md
   - Gemfile
