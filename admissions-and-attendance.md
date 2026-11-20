@@ -18,7 +18,7 @@ Children can start attending Preschool from aged 2.5 years and they stay with us
 
 {% include figure.html src="assets/images/attendance.jpg" alt="Children making rangoli patterns with coloured rice" %}
 
-Menston Preschool is open from 8:!5am to 3pm, Monday to Friday, during term time. Our term dates are always the same as Menston Primary School: see our [term dates](term-dates.html).
+Menston Preschool is open from 8:15am to 3pm, Monday to Friday, during term time. Our term dates are always the same as Menston Primary School: see our [term dates](term-dates.html).
 
 The session times are:
 
