@@ -11,3 +11,8 @@ exclude:
   - Gemfile.lock
   - vendor
   - tools
+
+# GitHub Pages turns relative Markdown links into root-absolute ones, which breaks
+# links when the site is served from a sub-path. Keep links as written.
+relative_links:
+  enabled: false

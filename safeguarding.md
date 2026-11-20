@@ -13,6 +13,6 @@ We believe that safeguarding is everybody’s responsibility, and all staff shou
 
 Our Designated Safeguarding Lead (DSL) is Clare Woollin and the Safeguarding Deputy is Jo Jackson. If you have any safeguarding concerns, please email [safeguarding@menstonpreschool.org](mailto:safeguarding@menstonpreschool.org).
 
-You can also contact Bradford Council’s safeguarding team through their [safeguarding children webpage](https://www.bradford.gov.uk/children-young-people-and-families/safeguarding-children/safeguarding-children/).
+You can also contact Bradford Council directly through their [Talk to us about a child](https://www.bradford.gov.uk/children-young-people-and-families/talk-to-us-about-a-child/talk-to-us-about-a-child/) page.
 
 [View our safeguarding policy](policies-and-procedures.html){: .button}
